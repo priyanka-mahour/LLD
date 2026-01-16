@@ -1,0 +1,51 @@
+# Dependencies
+/node_modules/
+
+# Build outputs
+/dist/
+/build/
+/out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*.local
+
+# Mac system files
+.DS_Store
+
+# Editor directories & settings
+.vscode/
+.idea/
+*.swp
+
+# TypeScript build cache
+*.tsbuildinfo
+
+# Local development files
+*.local
+
+# Coverage output
+coverage/
+
+# Cache
+/.parcel-cache
+/.next/
+.next/
+.cache/
+turbo/
+
+# Firebase / other local emulators
+.firebase/
+.firebase-analytics/
+
+# Storybook
+storybook-static/
+
+# Misc
+*.log
