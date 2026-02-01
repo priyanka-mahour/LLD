@@ -32,9 +32,6 @@ img {
 }
 
 
-
-
-
 .suggestions {
   width: 400px;
   border: 1px solid #000;
@@ -47,4 +44,68 @@ img {
 }
 .search-input {
   width: 400px;
+}
+
+
+
+
+/****************** Redux ******************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  padding: 16px 40px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #555;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.nav a:hover {
+  color: #000;
+}
+
+.cart-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart-icon {
+  font-size: 28px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background: red;
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
 }
