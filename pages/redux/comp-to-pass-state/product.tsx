@@ -1,10 +1,18 @@
 import { addItem, removeItem, clearAllItems } from '../redux-toolkit/slice'
 import styles from './header.module.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { fetchProducts } from '../redux-toolkit/product-slice'
 import type { AppDispatch } from '../redux-toolkit/store'
 
 const Product = () => {
     const dispatch = useDispatch<AppDispatch>()
+
+    useEffect(() => {
+        dispatch(fetchProducts())
+    }, [])
+
+    const selector = useSelector(state => state.products.items)
 
     return (
         <section className={styles.products}>
