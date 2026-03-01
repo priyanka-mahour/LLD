@@ -9,22 +9,32 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
-          cache: 'yarn'
-      
+          node-version: 18
+          cache: yarn
+
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      
+        run: yarn install --immutable
+
+      # Optional: Cache Next.js build output for faster builds
+      - name: Cache Next.js build
+        uses: actions/cache@v3
+        with:
+          path: .next/cache
+          key: next-cache-${{ github.sha }}
+          restore-keys: |
+            next-cache-
+
       - name: Build project
         run: yarn build
-      
+
+      # Optional tests
       # - name: Run tests
       #   run: yarn test --watchAll=false
