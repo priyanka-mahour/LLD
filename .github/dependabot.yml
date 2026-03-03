@@ -9,9 +9,47 @@ updates:
       time: "09:00"
     open-pull-requests-limit: 10
     labels:
-      - "dependencies"
-      - "automated"
+      prefix: "chore(deps): :pushpin:"
     commit-message:
       prefix: "chore"
       include: "scope"
-      
+    groups:
+      non-breaking-updates:
+        patterns:
+          - "*"
+        update-types:
+          - "patch"
+          - "minor"
+      nextjs-ecosystem:
+        patterns:
+          - "next*"
+          - "react*"
+          - "@next/*"
+        update-types:
+          - "major"
+      mdx-ecosystem:
+        patterns:
+          - "*mdx*"
+          - "remark-*"
+          - "rehype-*"
+        update-types:
+          - "major"
+      styling-packages:
+        patterns:
+          - "tailwindcss*"
+          - "@tailwindcss/*"
+          - "tw-*"
+        update-types:
+          - "major"
+      typescript-ecosystem:
+        patterns:
+          - "typescript"
+          - "@types/*"
+        update-types:
+          - "major"
+      dev-tooling:
+        patterns:
+          - "@biomejs/*"
+          - "babel-*"
+        update-types:
+          - "major"

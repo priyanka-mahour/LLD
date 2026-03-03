@@ -4,7 +4,9 @@
     "build": "next build",
     "dev": "next dev",
     "start": "next start",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "lint": "biome check",
+    "format": "biome format --write"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.11.2",
