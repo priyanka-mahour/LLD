@@ -1,4 +1,3 @@
-// import "./styles.css";
 import { useState, useEffect, useCallback } from "react";
 
 // User type

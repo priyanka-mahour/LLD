@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-// import '../../styles/global.css'
 
 const AutoSearch = () => {
     const [result, setResult] = useState([])

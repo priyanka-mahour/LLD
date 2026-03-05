@@ -7,22 +7,28 @@ export const fetchProducts = createAsyncThunk('products', async () => {
     return jsonRes.products
 })
 
-const initialState = {
+interface ProductState {
+    items: any[]
+    status: 'idle' | 'loading' | 'succeeded' | 'failed'
+    error: string | null
+}
+
+const initialState: ProductState = {
     items: [],
-    status: undefined,
-    error: null,
+    status: 'idle',
+    error: null
 }
 
 const productsSlice = createSlice({
     name: 'productsSlice',
     initialState,
+    reducers: {}, // ← MUST be an object (can be empty)
     extraReducers: (builder) => {
         builder.addCase(fetchProducts.fulfilled, (state, action) => {
-            state.status = 'succeeded',
-            state.items = action.payload,
-        });
-    },
-    reducers: undefined
+            state.status = 'succeeded'
+            state.items = action.payload
+        })
+    }
 })
 
 export default productsSlice.reducer
