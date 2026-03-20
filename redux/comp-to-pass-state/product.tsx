@@ -1,9 +1,9 @@
-import { addItem, removeItem, clearAllItems } from '../../pages/redux-toolkit/slice'
+import { addItem, removeItem, clearAllItems } from '../redux-toolkit/slice'
 import styles from './header.module.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { fetchProducts } from '../../pages/redux-toolkit/product-slice'
-import type { AppDispatch, RootState } from '../../pages/redux-toolkit/store'
+import { fetchProducts } from '../redux-toolkit/product-slice'
+import type { AppDispatch, RootState } from '../redux-toolkit/store'
 
 // Optional: type for each product item (update based on your API)
 interface ProductItem {
