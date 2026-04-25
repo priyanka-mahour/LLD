@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react";
-import {v4 as uuidv4} from 'uuid'
-
 import MemeCard from './meme-card'
 import Shimmer from '../shimmer/index'
 
@@ -28,7 +26,6 @@ const InfiniteScroll = () => {
                 throw new Error('Unexpected response format');
             }
 
-            debugger;
             // Set the memes state
             setMemes((memes) => [...memes, ...data.memes]);
         } catch (error) {
@@ -39,6 +36,9 @@ const InfiniteScroll = () => {
     };
 
     const handleScroll = () => {
+        // window.scrollY - How much you have scrolled the page
+        // window.innerHeight - current viewport or screen innerHeight
+        // document.body.scrollHeight - totall height of the page if we scroll
         const scrollPosition = window.scrollY + window.innerHeight
 
         if (scrollPosition >= document.body.scrollHeight) {
@@ -47,6 +47,7 @@ const InfiniteScroll = () => {
     }
 
     useEffect(() => {
+        //initial page load pe API call
         fetchMemes()
 
         window.addEventListener(('scroll'), handleScroll)
@@ -59,7 +60,7 @@ const InfiniteScroll = () => {
     console.log('memesssss', memes)
 
     return (
-        <div key={uuidv4()}>
+        <div key={crypto.randomUUID()}>
             <h1>Infinte Scroll!!!!</h1>
             {loading ? <Shimmer/> : memes.map((meme) => <MemeCard data={meme} />)}
         </div>

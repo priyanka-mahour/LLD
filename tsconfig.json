@@ -35,7 +35,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/nxn-chess-board/index.js"  ],
   "exclude": [
     "node_modules"
   ]
