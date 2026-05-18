@@ -9,7 +9,7 @@
     "format": "biome format --write"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.11.2",
+    "@reduxjs/toolkit": "^2.12.0",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
